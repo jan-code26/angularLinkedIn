@@ -17,8 +17,8 @@ const routes: Routes = [
 
   {path:'signup',component:SignupComponent},
   {path:'register/:id',component:RegisterComponent},
-  {path:'address/:id',component:AddressComponent},
-  {path:'education',component:EducationComponent},
+  {path:'address/:id/:id2',component:AddressComponent},
+  {path:'education/:id',component:EducationComponent},
   {path:'experience',component:ExperienceComponent},
   {path:'skills',component:SkillsComponent},
   { path: 'welcome/:id', component: WelcomeComponent },

@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   register() {
     //console.log(this.user);
     this.userService.register(this.userid,this.user).subscribe(data => {
-      this.router.navigateByUrl(`address/${data.id}`);
+      this.router.navigateByUrl(`address/${data.id}/0`);
       }, error => {
         alert("Registration Failed");
       }

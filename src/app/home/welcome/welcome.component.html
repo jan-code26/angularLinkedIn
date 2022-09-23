@@ -2,15 +2,21 @@
 <!--display userdetails add bootstrap-->
 <div class="wrapper">
   <div class="card">
+    <div class="card-header"></div>
     <h2> {{user.first_name}} {{user.last_name}} </h2>
+    <div class="card-body">
     <h4 class="title">date of birth:{{user.dob}}</h4>
     <h4 class="title">email:{{user.email}}</h4>
-    <p>{{user.summary}}</p>
-    <hr>
-    <div id="edit">
-      <a class="underlineHover" (click)="edit(user.id)">Edit</a>
     </div>
-    <hr>
+    <div class="card-footer">
+    <p>{{user.summary}}</p>
+      <div id="edit">
+        <a class="underlineHover" (click)="edit(user.id)">Edit</a>
+      </div>
+    </div>
+
+
+
     <div id="logout" class="button">
       <a class="underlineHover" href="#">logout</a>
     </div>
@@ -20,15 +26,37 @@
   <br>
 
   <div class="card">
-    <h2> {{address.country}} , {{address.state}} </h2>
+    <h2>Address</h2>
+    <h4 class="title" > {{address.country}} , {{address.state}} </h4>
     <h4 class="title">city:{{address.city}}</h4>
     <h4 class="title">street:{{address.street}}</h4>
     <p>{{address.zip}}</p>
     <hr>
     <div id="edit2">
-      <a class="underlineHover" (click)="editadd(address.id)">Edit</a>
+      <a class="underlineHover" (click)="editadd(user.id)">Edit</a>
     </div>
   </div>
 
+  <br>
+
+  <div class="list" *ngIf="education">
+    <h2>Education</h2>
+    <!--    ngfor for eduaction-->
+    <ul>
+      <li *ngFor="let edu of educational">
+        <div class="card">
+          <h4 class="title">{{edu.institution_name}}</h4>
+          <h4 class="title">{{edu.degree_name}}</h4>
+          <h4 class="title">{{edu.start_date}} - {{edu.end_date}}</h4>
+          <p>{{edu.institution_location}}</p>
+        </div>
+        <hr>
+        <button class="button" (click)="deleteedu(edu.id)">delete education</button>
+      </li>
+    </ul>
+  </div>
+  <button class="button" (click)="addedu()">add education</button>
+
 </div>
 
+<!--display userdetails add bootstrap-->

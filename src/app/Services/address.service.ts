@@ -16,6 +16,10 @@ export class AddressService {
   }
 
   updateAddress(addressid: number, address: Address) {
-    return this.http.put<Address>(`${this.baseUrl}/add/${addressid}`, address);
+    return this.http.put<Address>(`${this.baseUrl}/put/${addressid}`, address);
+  }
+
+  getAddress(addressid: number) {
+    return this.http.get<Address>(`${this.baseUrl}/${addressid}`);
   }
 }

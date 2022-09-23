@@ -1,46 +1,43 @@
-
 <h1>Education</h1>
 <div class="wrapper">
   <div id="formContent">
     <form (ngSubmit)="useredu()" #loginForm="ngForm" class="education-form">
       <div>
-<!--        degree-->
+        <!--        institution_name-->
+        <label for="institution_name">Institution Name</label>
+        <input type="text" id="institution_name" class="form-control" placeholder="Institution Name" name="institution_name" [(ngModel)]="education.institution_name" required>
+      </div>
+      <div>
+        <!--        degree-->
         <div class="form-group">
           <label for="degree">Degree</label><br>
-          <input type="text" class="form-control" id="degree" name="degree" [(ngModel)]="education.degree" required>
+          <input type="text" class="form-control" id="degree" name="degree" [(ngModel)]="education.degree_name" required placeholder="Degree">
         </div>
-<!--        feild-->
-        <div class="form-group">
-          <label for="field">Field</label>
-          <br>
-          <input type="text" class="form-control" id="field" name="field" [(ngModel)]="education.feildOfStudy" required>
-        </div>
-<!--        grade-->
+
+        <!--        grade-->
         <div class="form-group">
           <label for="grade">Grade</label><br>
-          <input type="text" class="form-control" id="grade" name="grade" [(ngModel)]="education.grade" >
+          <input type="text" class="form-control" id="grade" name="grade" [(ngModel)]="education.grade"  placeholder="Grade">
         </div>
-      <!--      summary-->
-      <div>
-        <label for="summary"></label>
-        <input type="text" id="summary" name="summary" placeholder="Summary" [(ngModel)]="education.summary">
-      </div>
-<!--        start_date-->
+
+
+        <!--        start_date-->
         <div class="form-group">
           <label for="start_date">Start Date</label>
-          <input type="date" class="form-control" id="start_date" name="start_date" [(ngModel)]="education.start_date" required>
+          <input type="date" class="form-control" id="start_date" name="start_date" [(ngModel)]="education.start_date" required >
         </div>
 
-<!--        end_date-->
+        <!--        end_date-->
         <div class="form-group">
           <label for="end_date">End Date</label>
-          <input type="date" class="form-control" id="end_date" name="end_date" [(ngModel)]="education.end_date">
+          <input type="date" class="form-control" id="end_date" name="end_date" [(ngModel)]="education.end_date" >
         </div>
-
-
-
-
-      <input type="submit" class=" submit" value="submit">
+        <!--        institution_location-->
+        <div class="form-group">
+          <label for="institution_location">Institution Location</label>
+          <input type="text" class="form-control" id="institution_location" name="institution_location" [(ngModel)]="education.institution_location" placeholder="Location">
+        </div>
+        <input type="submit" class=" submit" value="submit">
       </div>
     </form>
 

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     console.log(this.user);
     this.userService.login(this.user).subscribe((data: any) => {
       console.log(data);
-      this.router.navigateByUrl(`welcome/${data.body}`);
+      this.router.navigateByUrl(`welcome/${data.body.id}`);
     }
     );
   }

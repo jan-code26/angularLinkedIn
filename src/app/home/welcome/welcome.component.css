@@ -6,7 +6,6 @@
   width: 90%;
   max-width: 450px;
   position: relative;
-  padding: 0px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
@@ -25,7 +24,7 @@ button {
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 30%;
   font-size: 18px;
 }
 .underlineHover {
@@ -85,3 +84,15 @@ p{
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
+.list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+}
+/**/

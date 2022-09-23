@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-
+import { NzButtonModule } from 'ng-zorro-antd/button';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

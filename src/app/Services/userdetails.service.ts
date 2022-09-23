@@ -8,18 +8,21 @@ import {Details} from "../home/details";
 })
 export class UserdetailsService {
 
-  private baseUrl = "http://localhost:8080/user/get";
-  private baseUrl1 = "http://localhost:8080/user/put";
+  private baseUrl = "http://localhost:8080/user";
 
   constructor(private http:HttpClient) {}
 
   getDetails(userid: any):Observable<any> {
-    return this.http.get(`${this.baseUrl}/${userid}`);
+    return this.http.get(`${this.baseUrl}/get/${userid}`);
   }
 
   putDetails(id: any, user: any):Observable<any> {
-    return this.http.put(`${this.baseUrl1}/${id}`, user);
+    return this.http.put(`${this.baseUrl}/put/${id}`, user);
   }
+
+
+
+
 }
 
 

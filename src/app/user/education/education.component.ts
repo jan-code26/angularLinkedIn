@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Education} from "../education";
+import {Component, Input, OnInit} from '@angular/core';
+import {Education} from "./education";
 import {ActivatedRoute, Router} from "@angular/router";
 import {EducationService} from "../../Services/education.service";
 
@@ -9,7 +9,7 @@ import {EducationService} from "../../Services/education.service";
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent implements OnInit {
-
+  @Input() userid!: number;
   education: Education= new Education();
   constructor(
     private educationService: EducationService,
@@ -20,11 +20,12 @@ export class EducationComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.userid = this.route.snapshot.params['id'];
   }
 
   useredu() {
-    this.educationService.useredu(this.education).subscribe(data => {
-      this.router.navigate(['/welcome']);
+    this.educationService.useredu(this.education,this.userid).subscribe(data => {
+      this.router.navigateByUrl(`welcome/${this.userid}`);
     }, error => {
       alert("Registration Failed");
     });
