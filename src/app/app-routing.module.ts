@@ -12,6 +12,7 @@ import {ExperienceComponent} from "./user/experience/experience.component";
 import {SkillsComponent} from "./user/skills/skills.component";
 import {EditComponent} from "./user/edit/edit.component";
 
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
@@ -19,10 +20,11 @@ const routes: Routes = [
   {path:'register/:id',component:RegisterComponent},
   {path:'address/:id/:id2',component:AddressComponent},
   {path:'education/:id',component:EducationComponent},
-  {path:'experience',component:ExperienceComponent},
+  {path:'experience/:id',component:ExperienceComponent},
   {path:'skills',component:SkillsComponent},
   { path: 'welcome/:id', component: WelcomeComponent },
   { path: 'edit/:id', component: EditComponent },
+
 
   // otherwise redirect to home
   { path: '**', redirectTo: 'login' }

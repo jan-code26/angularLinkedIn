@@ -21,7 +21,13 @@ export class AddressComponent implements OnInit {
 
   ngOnInit(): void {
     this.userid = this.route.snapshot.params['id'];
-    this.addressid = this.route.snapshot.params['id'];
+    this.addressid = this.route.snapshot.params['id2'];
+    if(this.addressid != 0) {
+      this.addressService.getAddress(this.addressid).subscribe(data => {
+        console.log(data);
+        this.address = data;
+      });
+    }
   }
 
   addAddress() {
@@ -35,18 +41,13 @@ export class AddressComponent implements OnInit {
       );
     }
     else {
-      this.addressService.getAddress(this.addressid).subscribe(data => {
-          this.address = data;
-        }
-      );
-
-      this.addressService.addAddress(this.userid, this.address).subscribe(data => {
-          console.log(data);
-          this.router.navigateByUrl(`welcome/${data.id}`);
-        }, error => {
-          alert("Address Failed");
-        }
-      );
+      this.addressService.updateAddress(this.addressid, this.address).subscribe(data2 => {
+            console.log(data2);
+            this.router.navigateByUrl(`welcome/${this.userid}`);
+          }, error => {
+            alert("Address Failed");
+          }
+        );
     }
   }
 

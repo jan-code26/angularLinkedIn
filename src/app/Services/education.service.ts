@@ -17,4 +17,6 @@ export class EducationService {
   deleteedu(id: number) {
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
+
+
 }
