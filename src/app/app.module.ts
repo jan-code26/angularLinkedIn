@@ -10,7 +10,7 @@ import en from '@angular/common/locales/en';
 
 //components
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './home/welcome/welcome.component';
+import { WelcomeComponent } from './user/welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './onboarding/signup/signup.component';
 import { RegisterComponent } from './user/register/register.component';
@@ -19,7 +19,7 @@ import { EducationComponent } from './user/education/education.component';
 import { ExperienceComponent } from './user/experience/experience.component';
 import { SkillsComponent } from './user/skills/skills.component';
 import { EditComponent } from './user/edit/edit.component';
-import { AddressComponent } from './address/address.component';
+import { AddressComponent } from './user/address/address.component';
 import { registerLocaleData } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 

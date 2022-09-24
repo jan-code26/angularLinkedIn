@@ -1,30 +1,30 @@
 <h1>Experience</h1>
 <div class="wrapper">
   <div id="formContent">
-    <form (ngSubmit)="userexp()" [formGroup]="expForm" class="education-form">
+    <form (ngSubmit)="userexp()" class="education-form"  #AddressForm="ngForm">
       <div>
         <label for="organisation_name">Company</label>
-        <input type="text" formControlName="organisation_name" id="organisation_name" />
+        <input type="text"  id="organisation_name"  name="organisation_name" [(ngModel)]="experiance.organisation_name" #organisation_name="ngModel" required>/>
       </div>
       <div>
         <label for="position">Designation</label>
-        <input type="text" formControlName="position" id="position" />
+        <input type="text"  id="position"  name="position" [(ngModel)]="experiance.position" #position="ngModel" required>/>
       </div>
       <div>
         <label for="start_date">Start Date</label>
-        <input type="date" formControlName="start_date" id="start_date" />
+        <input type="date"  id="start_date"  name="start_date" [(ngModel)]="experiance.start_date" #start_date="ngModel" required>/>
       </div>
       <div>
         <label for="end_date">End Date</label>
-        <input type="date" formControlName="end_date" id="end_date" />
+        <input type="date"  id="end_date"  name="end_date" [(ngModel)]="experiance.end_date" #end_date="ngModel" required>/>
       </div>
       <div>
         <label for="exp_summary">Description</label>
-        <input  type="text" formControlName="exp_summary" id="exp_summary">
+        <input type="text"  id="exp_summary"  name="exp_summary" [(ngModel)]="experiance.exp_summary" #exp_summary="ngModel" required>/>
       </div>
       <div>
         <label for="organisation_location">Location</label>
-        <input type="text" formControlName="organisation_location" id="organisation_location" />
+        <input type="text"  id="organisation_location"  name="organisation_location" [(ngModel)]="experiance.organisation_location" #organisation_location="ngModel" required>/>
       </div>
       <div>
         <button type="submit">Submit</button>

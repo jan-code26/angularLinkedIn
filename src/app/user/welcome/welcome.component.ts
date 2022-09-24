@@ -2,10 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Details} from "../details";
 import {UserdetailsService} from "../../Services/userdetails.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Address} from "../../address/address";
-import {Education} from "../../user/education/education";
+import {Address} from "../address/address";
+import {Education} from "../education/education";
 import {EducationService} from "../../Services/education.service";
-import {Experiance} from "../../user/experience/experiance";
+import {Experiance} from "../experience/experiance";
 import {ExperienceService} from "../../Services/experience.service";
 
 @Component({

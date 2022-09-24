@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ExperienceService} from "../../Services/experience.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Experiance} from "./experiance";
 
 @Component({
   selector: 'app-experience',
@@ -10,15 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ExperienceComponent implements OnInit {
   @Input() userid!: number;
-  expForm: FormGroup = new FormGroup({
-    organisation_name: new FormControl('', Validators.required),
-    organisation_location: new FormControl('', Validators.required),
-    exp_summary: new FormControl('', Validators.required),
-    start_date: new FormControl('', Validators.required),
-    position: new FormControl('', Validators.required),
-    end_date: new FormControl(''),
-    id: new FormControl(''),
-  });
+  experiance:Experiance=new Experiance();
   present = false;
 
   constructor(
@@ -33,8 +26,8 @@ export class ExperienceComponent implements OnInit {
   }
 
   userexp() {
-    console.log(this.expForm.value)
-    this.experienceService.userexp(this.expForm.value, this.userid).subscribe(data => {
+    console.log(this.experiance);
+    this.experienceService.userexp(this.experiance, this.userid).subscribe(data => {
       console.log(data);
       this.router.navigateByUrl(`welcome/${this.userid}`);
     }, error => {

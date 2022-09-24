@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserdetailsService} from "../../Services/userdetails.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Details} from "../../home/details";
+import {Details} from "../details";
 
 @Component({
   selector: 'app-edit',

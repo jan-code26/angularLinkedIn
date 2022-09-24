@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import {User} from "../../user";
 import {UsersignupService} from "../../Services/usersignup.service";
-import {Userdetails} from "../../userdetails";
 
 
 
