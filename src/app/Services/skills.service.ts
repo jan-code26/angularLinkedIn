@@ -16,7 +16,9 @@ export class SkillsService {
     return this.http.get<Skills[]>(`${this.baseUrl}/all`);
   }
 
-  userskill(skill: Skills[], userid: number) {
-    return this.http.post<Skills[]>(`${this.baseUrl}/add/${userid}`, skill);
+  addskill(id: number,id2: number){
+    return this.http.post(`${this.baseUrl}/add/${id}/${id2}`,{});
   }
-}
+
+  }
+

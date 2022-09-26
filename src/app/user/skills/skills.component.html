@@ -4,7 +4,8 @@
   <button class="skilladd" type="button" name="skilladd" id="add">Add</button>
   <ul>
     <li *ngFor="let skill of skills">
-      {{skill.skill_summary}}
+
+      <button (click)="addskill(skill.id)">{{skill.skill_summary}}</button>
     </li>
   </ul>
 </div>

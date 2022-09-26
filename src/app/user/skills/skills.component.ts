@@ -29,7 +29,14 @@ export class SkillsComponent implements OnInit {
     );
   }
 
-  userskill() {
 
+  addskill(id: number){
+    this.skillService.addskill(this.userid,id).subscribe(data => {
+      console.log(data);
+      // this.router.navigateByUrl(`welcome/${this.userid}`);
+    }, error => {
+      alert("Registration Failed");
+    }
+    );
   }
 }
