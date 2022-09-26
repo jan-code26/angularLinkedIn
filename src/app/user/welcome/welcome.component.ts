@@ -69,7 +69,7 @@ export class WelcomeComponent implements OnInit {
 
   addedu() {
     this.neweducation = true;
-    this.router.navigateByUrl(`education/${this.userid}`);
+    this.router.navigateByUrl(`education/${this.userid}/0`);
   }
 
   deleteedu(id: number) {
@@ -82,7 +82,7 @@ export class WelcomeComponent implements OnInit {
 
   addexp() {
     this.newexperience=true;
-    this.router.navigateByUrl(`experience/${this.userid}`);
+    this.router.navigateByUrl(`experience/${this.userid}/0`);
   }
 
   deleteexp(id: number) {
@@ -91,6 +91,17 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl(`welcome/${this.userid}`);
     }
     );
+
+  }
+
+  edidedu(id:number) {
+    console.log(id);
+    this.router.navigateByUrl(`education/${this.userid}/${id}`);
+  }
+
+  editexp(id: number) {
+    this.router.navigateByUrl(`experience/${this.userid}/${id}`);
+
 
   }
 }

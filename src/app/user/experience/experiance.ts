@@ -5,5 +5,5 @@ export class Experiance {
   start_date!: string;
   position!: string;
   id!: number;
-  end_date!: string;
+  end_date: string="present";
 }

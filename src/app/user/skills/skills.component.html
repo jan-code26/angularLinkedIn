@@ -1,1 +1,10 @@
-<p>skills works!</p>
+<div>
+<!--  <input class=skilladd" type="text" name="skilladd" id="skilladd" value="" />-->
+
+  <button class="skilladd" type="button" name="skilladd" id="add">Add</button>
+  <ul>
+    <li *ngFor="let skill of skills">
+      {{skill.skill_summary}}
+    </li>
+  </ul>
+</div>

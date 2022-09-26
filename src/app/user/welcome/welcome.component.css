@@ -1,98 +1,95 @@
-.card {
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  background: #fff;
-  padding: 30px;
-  width: 90%;
-  max-width: 450px;
-  position: relative;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  text-align: center;
-}
 
-.title {
-  color: grey;
-  font-size: 18px;
+.App {
+  /*text-align: center;*/
+  background: linear-gradient(to top, #ff8f8f, #fffc99);    border-radius: 15px;
+  scroll-behavior: smooth;
+  margin: 10px;
+  padding: 10px;
 }
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 30%;
-  font-size: 18px;
+.container{
+  width: 80%;
+  /*min-height: 85vh;*/
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.underlineHover {
-  color: #92badd;
-  display:inline-block;
+.btn{
+  font-family: Montserrat, sans-serif;
+  color:black;
+  margin-left: 10px;
+}
+i{
+  margin: 5px;
+  font-size: 20px;
+}
+.address{
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  color: #214c5e;
+  margin: 10px;
+  text-transform: capitalize;
+}
+.address:hover +.hideedit{
+  color: #516d7a;
   text-decoration: none;
-  font-weight: 400;
+  display: block;
 }
-
-button:hover, a:hover {
-  opacity: 0.7;
+.hideedit {
+  display: none;
 }
+.name{
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  color: #202121;
 
-body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-}
-
-h2{
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
   text-transform: uppercase;
-  display:inline-block;
-  margin: 40px 8px 30px 8px;
-  color: #cccccc;
 }
-h4{
-  font-size: 10px;
-  font-weight: 400;
-  text-transform: none;
-  display:inline-block;
-  margin: 4px 8px 10px 8px;
-  color: #cccccc;
+
+.showedu{
+  margin-top: 20px;
 }
-p{
-  font-size: 12px;
-  font-weight: 400;
-  text-transform: none;
-  display:inline-block;
-  color: #725353;
+
+.edu{
+  text-align: left;
+  position: absolute;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+
 }
-.wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  min-height: 100%;
-  padding: 20px;
+.add{
+  position: inherit;
+  right: 2px;
+  width: 2px;
+  height: 2px;
+
 }
-#formFooter {
-  background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
-  padding: 25px;
-  text-align: center;
-  -webkit-border-radius: 0 0 10px 10px;
-  border-radius: 0 0 10px 10px;
+.edudet{
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  color: #214c5e;
+  text-transform: capitalize;
+  margin: 10px;
 }
-.list{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border-radius: 10px 10px 10px 10px;
-  background: #fff;
-  width: 90%;
-  max-width: 450px;
-  position: relative;
+
+.list-group{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  left: 5px;
 }
-/**/
+
+#section1 {
+  /*height: 600px;*/
+  /*//background: linear-gradient(to top, #ff8f8f, #fffc99);*/
+}
+
+#section2 {
+  /*height: 600px;*/
+  /*background: linear-gradient(to top, #ff8f8f, #fffc99);*/
+}
+
+.del{
+  position: absolute;
+  font-size: 15px;
+  color: #214c5e;
+}

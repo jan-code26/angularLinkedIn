@@ -1,9 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import {User} from "../../user";
 import {UsersignupService} from "../../Services/usersignup.service";
-
 
 
 @Component({
@@ -30,16 +29,20 @@ export class SignupComponent implements OnInit {
     }
 
     else if (this.user.password == this.user.confirmPassword) {
-      this.userService.signup(this.user).subscribe(data => {
+      this.userService.signup(this.user).subscribe((data: any) => {
         console.log(data);
         this.router.navigateByUrl(`register/${data.id}`);
-        }, error => {
-          alert(error.error.status==500?"User Already Exists":"User Registration Failed");
-          console.log(error);
-        }
+      },
+      error => {
+        alert("Registration Failed");
+      }
       );
     } else {
       alert("Passwords do not match");
     }
+  }
+
+  login() {
+    this.router.navigateByUrl(`login`);
   }
 }

@@ -20,4 +20,8 @@ export class ExperienceService {
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
 
   }
+
+  getexp(expid: number) {
+    return this.http.get<Experiance>(`${this.baseUrl}/get/${expid}`);
+  }
 }

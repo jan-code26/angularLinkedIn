@@ -11,6 +11,7 @@ import {Experiance} from "./experiance";
 })
 export class ExperienceComponent implements OnInit {
   @Input() userid!: number;
+  @Input() expid!: number;
   experiance:Experiance=new Experiance();
   present = false;
 
@@ -23,6 +24,12 @@ export class ExperienceComponent implements OnInit {
 
   ngOnInit(): void {
     this.userid = this.route.snapshot.params['id'];
+    this.expid = this.route.snapshot.params['id2'];
+    if(this.expid != 0) {
+      this.experienceService.getexp(this.expid).subscribe(data => {
+        this.experiance = data;
+      });
+    }
   }
 
   userexp() {

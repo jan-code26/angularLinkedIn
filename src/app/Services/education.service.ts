@@ -19,4 +19,13 @@ export class EducationService {
   }
 
 
+  updateedu(education: Education, eduid: number) {
+    return this.http.put<Education>(`${this.baseUrl}/put/${eduid}`, education);
+
+  }
+
+  getedu(eduid: number) {
+    return this.http.get<Education>(`${this.baseUrl}/get/${eduid}`);
+
+  }
 }
