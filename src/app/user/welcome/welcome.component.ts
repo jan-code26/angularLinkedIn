@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Address} from "../address/address";
 import {Education} from "../education/education";
 import {EducationService} from "../../Services/education.service";
-import {Experiance} from "../experience/experiance";
+import {Experience} from "../experience/experience";
 import {ExperienceService} from "../../Services/experience.service";
 
 @Component({
@@ -18,7 +18,7 @@ export class WelcomeComponent implements OnInit {
   address:Address = new Address();
   //array of education
   education: Education[] = [];
-  experience:Experiance[] = [];
+  experience:Experience[] = [];
   @Input() userid!: number;
   neweducation: boolean=false;
   newexperience: boolean=false;
@@ -74,6 +74,7 @@ export class WelcomeComponent implements OnInit {
 
   deleteedu(id: number) {
     this.educationService.deleteedu(id).subscribe(data => {
+        alert("Deleted");
       this.education.pop();
       this.router.navigateByUrl(`welcome/${this.userid}`);
     }
@@ -87,6 +88,7 @@ export class WelcomeComponent implements OnInit {
 
   deleteexp(id: number) {
     this.experienceService.deleteexp(id).subscribe(data => {
+      alert("Deleted");
       this.experience.pop();
       this.router.navigateByUrl(`welcome/${this.userid}`);
     }
@@ -103,5 +105,9 @@ export class WelcomeComponent implements OnInit {
     this.router.navigateByUrl(`experience/${this.userid}/${id}`);
 
 
+  }
+
+  login() {
+    this.router.navigateByUrl(`login`);
   }
 }

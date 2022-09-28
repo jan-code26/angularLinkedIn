@@ -1,30 +1,35 @@
-<h1>Edit</h1>
-<div class="wrapper">
-  <div id="formContent">
+
+<div class="registration-form">
+
     <form (ngSubmit)="editUser(user.id)" #editForm="ngForm" class="edit-form">
-      <div>
-        <label for="First_name"></label>
-        <input type="text" id="First_name" name="First_name" placeholder="First Name" [(ngModel)]="user.first_name" required>
+      <h3>Edit</h3>
+      <div class="form-icon">
+        <span><i class="icon icon-pencil"></i></span>
       </div>
-      <div>
-        <label for="Last_name"></label>
-        <input type="text" id="Last_name" name="Last_name" placeholder="Last Name" [(ngModel)]="user.last_name" required>
+      <div class="form-group">
+        <label for="First_name">First Name</label>
+        <input class="form-control item" type="text" id="First_name" name="First_name" placeholder="First Name" [(ngModel)]="user.first_name" required>
+      </div>
+      <div class="form-group">
+        <label for="Last_name">Last Name</label>
+        <input class="form-control item" type="text" id="Last_name" name="Last_name" placeholder="Last Name" [(ngModel)]="user.last_name" required>
       </div>
       <!--      dob-->
-      <div>
-        <label for="dob"></label>
-        <input type="date" id="dob" name="dob" placeholder="Date of Birth" [(ngModel)]="user.dob" required>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input class="form-control item" type="date" id="dob" name="dob" placeholder="Date of Birth" [(ngModel)]="user.dob" required>
       </div>
       <!--      summary-->
-      <div>
-        <label for="summary"></label>
-        <input type="text" id="summary" name="summary" placeholder="Summary" [(ngModel)]="user.summary">
+      <div class="form-group">
+        <label for="summary">Summary</label>
+        <input class="form-control item" type="text" id="summary" name="summary" placeholder="Summary" [(ngModel)]="user.summary">
       </div>
 
-      <input type="submit" class=" submit" value="Edit">
-
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block create-account">Save</button>
+        <button type="submit" class="btn btn-block create-account"  value="sign up" (click)="cancel()">Back</button>
+      </div>
     </form>
 
 
-  </div>
 </div>

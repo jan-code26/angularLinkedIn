@@ -2,7 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ExperienceService} from "../../Services/experience.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Experiance} from "./experiance";
+import {Experience} from "./experience";
+
 
 @Component({
   selector: 'app-experience',
@@ -12,8 +13,18 @@ import {Experiance} from "./experiance";
 export class ExperienceComponent implements OnInit {
   @Input() userid!: number;
   @Input() expid!: number;
-  experiance:Experiance=new Experiance();
+  experiance:Experience=new Experience();
   present = false;
+
+  ExperienceForm = new FormGroup({
+    organisation_name: new FormControl('', [Validators.required]),
+    organisation_location: new FormControl('', [Validators.required]),
+    exp_summary: new FormControl('', [Validators.required]),
+    start_date: new FormControl('', [Validators.required]),
+    position: new FormControl('', [Validators.required]),
+    end_date: new FormControl('', [Validators.required]),
+
+  });
 
   constructor(
     private experienceService: ExperienceService,
@@ -27,18 +38,27 @@ export class ExperienceComponent implements OnInit {
     this.expid = this.route.snapshot.params['id2'];
     if(this.expid != 0) {
       this.experienceService.getexp(this.expid).subscribe(data => {
-        this.experiance = data;
+        this.ExperienceForm.patchValue(data);
       });
     }
   }
 
   userexp() {
-    console.log(this.experiance);
-    this.experienceService.userexp(this.experiance, this.userid).subscribe(data => {
-      console.log(data);
-      this.router.navigateByUrl(`welcome/${this.userid}`);
-    }, error => {
-      alert("Registration Failed");
-    });
+    if(this.ExperienceForm.valid) {
+      console.log(this.experiance);
+      this.experienceService.userexp(<Experience>this.ExperienceForm.value, this.userid).subscribe(data => {
+        console.log(data);
+        this.router.navigateByUrl(`welcome/${this.userid}`);
+      }, error => {
+        alert("Registration Failed");
+      });
+    }
+    else {
+      alert("Invalid Form");
+    }
+  }
+
+  cancel() {
+    this.router.navigateByUrl(`welcome/${this.userid}`);
   }
 }

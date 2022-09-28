@@ -11,6 +11,7 @@ import {EducationComponent} from "./user/education/education.component";
 import {ExperienceComponent} from "./user/experience/experience.component";
 import {SkillsComponent} from "./user/skills/skills.component";
 import {EditComponent} from "./user/edit/edit.component";
+import {CommonComponent} from "./onboarding/common/common.component";
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'skills/:id/:id2',component:SkillsComponent},
   { path: 'welcome/:id', component: WelcomeComponent },
   { path: 'edit/:id', component: EditComponent },
+  {path:'common',component:CommonComponent},
 
 
   // otherwise redirect to home

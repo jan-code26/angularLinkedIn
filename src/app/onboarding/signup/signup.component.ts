@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import {User} from "../../user";
 import {UsersignupService} from "../../Services/usersignup.service";
+import {FormBuilder, FormGroup, Validators ,FormControl} from '@angular/forms';
 
 
 @Component({
@@ -12,6 +13,13 @@ import {UsersignupService} from "../../Services/usersignup.service";
 })
 export class SignupComponent implements OnInit {
   user:User= new User();
+
+  signupForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+    confirmPassword: new FormControl('', [Validators.required]),
+  });
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -24,21 +32,16 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    if(this.user.email==null || this.user.password==null || this.user.confirmPassword==null){
-      alert("Please fill all the fields");
-    }
-
-    else if (this.user.password == this.user.confirmPassword) {
-      this.userService.signup(this.user).subscribe((data: any) => {
-        console.log(data);
-        this.router.navigateByUrl(`register/${data.id}`);
-      },
-      error => {
-        alert("Registration Failed");
-      }
+    if (this.signupForm.valid && this.signupForm.value.password === this.signupForm.value.confirmPassword) {
+      console.log(this.signupForm.value);
+      this.userService.signup(<User>this.signupForm.value).subscribe((data: any) => {
+          console.log(data);
+          this.router.navigateByUrl(`register/${data.id}`);
+        }
       );
-    } else {
-      alert("Passwords do not match");
+    }
+    else{
+      alert("Fill all details correctly");
     }
   }
 

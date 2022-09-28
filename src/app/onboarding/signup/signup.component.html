@@ -1,53 +1,52 @@
 <div class="h-100">
   <div class="row h-100 w-100 m-0 p-20">
-    <div class="col-6 background d-none d-md-flex"></div>
+
     <div
       class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-column"
     >
-      <div class="content-wrapper">
+      <div class="registration-form">
         <h3>LinkedIn</h3>
         <div class="sub-header">
           Sign up to join this community
         </div>
-        <form class="m-60" (ngSubmit)="signup()" #loginForm="ngForm">
+        <form  (ngSubmit)="signup()" [formGroup]="signupForm">
+          <div class="form-icon">
+            <span><i class="icon icon-user"></i></span>
+          </div>
           <div class="form-group">
-            <input type="email"
+            <input type="text"
                    id="email"
-                   class="fadeIn second"
+                   class="form-control item"
                    name="email"
                    placeholder="email"
-                   [(ngModel)]="user.email">
+                    formControlName="email">
 
           </div>
           <div class="form-group">
-            <input type="password"
+            <input type="text"
                    id="password"
-                   class="second"
+                   class="form-control item"
                    name="login"
                    placeholder="password"
-                   [(ngModel)]="user.password">
+                   formControlName="password">
           </div>
           <div class="form-group">
-            <input type="password"
+            <input type="text"
                    id="confirmPassword"
-                   class="second"
+                   class="form-control item"
                    name="confirmPassword"
                    placeholder="confirmPassword"
-                   [(ngModel)]="user.confirmPassword">
+                   formControlName="confirmPassword">
 
           </div>
-          <div class="form-group d-flex justify-content-between mb-3">
-
-            <div
-              class="form-group d-flex justify-content-between button-margin submit-btn-grp"
-            >
-              <input type="submit" class="fourth" value="Sign Up">
-              <input type="submit" class="btnLogIn" value="Log In" (click)="login()"/>
-            </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-block create-account" value="Sign Up">Create Account</button>
+            <button type="submit" class="btn btn-block create-account"  value="Log In" (click)="login()">Login</button>
           </div>
         </form>
       </div>
       <div class="terms">Term of use. Privacy policy</div>
     </div>
+    <div class="col-6 background d-none d-md-flex"></div>
   </div>
 </div>

@@ -1,34 +1,42 @@
-<h1>Experience</h1>
-<div class="wrapper">
-  <div id="formContent">
-    <form (ngSubmit)="userexp()" class="education-form"  #AddressForm="ngForm">
-      <div>
-        <label for="organisation_name">Company</label>
-        <input type="text"  id="organisation_name"  name="organisation_name" [(ngModel)]="experiance.organisation_name" #organisation_name="ngModel" required>/>
-      </div>
-      <div>
-        <label for="position">Designation</label>
-        <input type="text"  id="position"  name="position" [(ngModel)]="experiance.position" #position="ngModel" required>
-      </div>
-      <div>
-        <label for="start_date">Start Date</label>
-        <input type="date"  id="start_date"  name="start_date" [(ngModel)]="experiance.start_date" #start_date="ngModel" required>
-      </div>
-      <div>
-        <label for="end_date">End Date</label>
-        <input type="date"  id="end_date"  name="end_date" [(ngModel)]="experiance.end_date" #end_date="ngModel" required>
-      </div>
-      <div>
-        <label for="exp_summary">Description</label>
-        <input type="text"  id="exp_summary"  name="exp_summary" [(ngModel)]="experiance.exp_summary" #exp_summary="ngModel" required>
-      </div>
-      <div>
-        <label for="organisation_location">Location</label>
-        <input type="text"  id="organisation_location"  name="organisation_location" [(ngModel)]="experiance.organisation_location" #organisation_location="ngModel" required>
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-  </div>
+
+<div class="registration-form">
+  <form (ngSubmit)="userexp()" class="education-form"  [formGroup]="ExperienceForm" >
+
+    <h3>Experience</h3>
+    <div class="form-icon">
+      <span><i class="icon icon-organization"></i></span>
+    </div>
+
+    <div class="form-group">
+      <label for="organisation_name">Company</label>
+      <input class="form-control item"  type="text"  id="organisation_name"  name="organisation_name" formControlName="organisation_name" placeholder="Company Name" required>
+    </div>
+    <div class="form-group">
+      <label for="position">Designation</label>
+      <input class="form-control item" type="text"  id="position"  name="position" formControlName="position" placeholder="Designation" required>
+    </div>
+    <div class="form-group">
+      <label for="start_date">Start Date</label>
+      <input class="form-control item" type="date"  id="start_date"  name="start_date" formControlName="start_date" placeholder="Start Date" required>
+    </div>
+    <div class="form-group">
+      <label for="end_date">End Date</label>
+      <input class="form-control item" type="date"  id="end_date"  name="end_date" formControlName="end_date" placeholder="End Date" required>
+    </div>
+    <div class="form-group">
+      <label for="exp_summary">Description</label>
+      <input class="form-control item" type="text"  id="exp_summary"  name="exp_summary" formControlName="exp_summary" placeholder="Description" required>
+    </div>
+    <div class="form-group" >
+      <label for="organisation_location">Location</label>
+      <input class="form-control item" type="text"  id="organisation_location"  name="organisation_location" formControlName="organisation_location" placeholder="Location" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block create-account">Save</button>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-warning btn-block create-account" (click)="cancel()">Back</button>
+    </div>
+  </form>
 </div>
+

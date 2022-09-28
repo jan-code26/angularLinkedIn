@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Experiance} from "../user/experience/experiance";
+import {Experience} from "../user/experience/experience";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class ExperienceService {
 
   }
 
-  userexp(experiance: Experiance, userid: number) {
+  userexp(experiance: Experience, userid: number) {
     return this.http.post(`${this.baseUrl}/add/${userid}`, experiance);
   }
 
@@ -22,6 +22,6 @@ export class ExperienceService {
   }
 
   getexp(expid: number) {
-    return this.http.get<Experiance>(`${this.baseUrl}/get/${expid}`);
+    return this.http.get<Experience>(`${this.baseUrl}/get/${expid}`);
   }
 }

@@ -1,47 +1,55 @@
-<h1>Education</h1>
-<div class="wrapper">
-  <div id="formContent">
-    <form (ngSubmit)="useredu()" #loginForm="ngForm" class="education-form">
-      <div>
-        <!--        institution_name-->
-        <label for="institution_name">Institution Name</label>
-        <input type="text" id="institution_name" class="form-control" placeholder="Institution Name" name="institution_name" [(ngModel)]="education.institution_name" required>
+<div class="registration-form">
+  <form (ngSubmit)="useredu()" class="education-form" [formGroup]="educationForm">
+    <h3>Education</h3>
+
+    <div class="form-icon">
+      <span><i class="icon icon-notebook"></i></span>
+    </div>
+    <div class="form-group">
+      <!--        institution_name-->
+      <label for="institution_name">Institution Name</label>
+      <input type="text" id="institution_name" class="form-control item" placeholder="Institution Name" name="institution_name" formControlName="institution_name">
+    </div>
+    <div class="form-group">
+      <!--        degree-->
+      <div class="form-group">
+        <label for="degree">Degree</label>
+        <input type="text"  class="form-control item" id="degree" name="degree"  placeholder="Degree" formControlName="degree_name">
       </div>
-      <div>
-        <!--        degree-->
-        <div class="form-group">
-          <label for="degree">Degree</label><br>
-          <input type="text" class="form-control" id="degree" name="degree" [(ngModel)]="education.degree_name" required placeholder="Degree">
-        </div>
 
-        <!--        summary-->
-        <div class="form-group">
-          <label for="grade">Summary</label><br>
-          <input type="text" class="form-control" id="grade" name="grade" [(ngModel)]="education.summary"  placeholder="Grade">
+      <!--        summary-->
+      <div class="form-group">
+        <label for="summary">Summary</label>
+        <input type="text"  class="form-control item" id="summary" name="summary" placeholder="Summary" formControlName="summary">
 
-        </div>
-
-
-        <!--        start_date-->
-        <div class="form-group">
-          <label for="start_date">Start Date</label>
-          <input type="date" class="form-control" id="start_date" name="start_date" [(ngModel)]="education.start_date" required >
-        </div>
-
-        <!--        end_date-->
-        <div class="form-group">
-          <label for="end_date">End Date</label>
-          <input type="date" class="form-control" id="end_date" name="end_date" [(ngModel)]="education.end_date" >
-        </div>
-        <!--        institution_location-->
-        <div class="form-group">
-          <label for="institution_location">Institution Location</label>
-          <input type="text" class="form-control" id="institution_location" name="institution_location" [(ngModel)]="education.institution_location" placeholder="Location">
-        </div>
-        <input type="submit" class=" submit" value="submit">
       </div>
-    </form>
 
 
-  </div>
+      <!--        start_date-->
+      <div class="form-group">
+        <label for="start_date">Start Date</label>
+        <input type="date"  class="form-control item" id="start_date" name="start_date" placeholder="Start Date" formControlName="start_date">
+      </div>
+
+      <!--        end_date-->
+      <div class="form-group">
+        <label for="end_date">End Date</label>
+        <input type="date"  class="form-control item" id="end_date" name="end_date" placeholder="End Date" formControlName="end_date">
+      </div>
+      <!--        institution_location-->
+      <div class="form-group">
+        <label for="institution_location">Institution Location</label>
+        <input type="text"  class="form-control item" id="institution_location" name="institution_location" placeholder="Institution Location" formControlName="institution_location">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block create-account">Save</button>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-warning btn-block create-account" (click)="cancel()">Back</button>
+      </div>
+    </div>
+  </form>
+
+
 </div>
+

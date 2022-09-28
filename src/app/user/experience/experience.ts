@@ -1,4 +1,4 @@
-export class Experiance {
+export class Experience {
   organisation_name!: string;
   organisation_location!: string;
   exp_summary!: string;

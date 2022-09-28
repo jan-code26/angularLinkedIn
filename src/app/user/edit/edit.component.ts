@@ -35,4 +35,8 @@ export class EditComponent implements OnInit {
       }
     );
   }
+
+  cancel() {
+    this.router.navigateByUrl(`welcome/${this.userid}`);
+  }
 }

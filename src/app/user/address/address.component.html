@@ -1,35 +1,36 @@
-<h1>Address</h1>
-<div class="wrapper">
-  <div id="formContent">
-    <form (ngSubmit)="addAddress()" #AddressForm="ngForm" class="address-form">
-      <div>
-        <label for="Country"></label>
-        <input type="text" id="Country" name="Country" placeholder="Country" [(ngModel)]="address.country" required>
+<div class="registration-form">
+    <form (ngSubmit)="addAddress()" [formGroup]="addressForm" class="address-form">
+      <h3>Address</h3>
+      <div class="form-icon">
+        <span><i class="icon icon-location-pin"></i></span>
+      </div>
+      <div class="form-group">
+        <label for="Country">Country</label>
+        <input type="text" id="Country" class="form-control item" name="Country" placeholder="Country" formControlName="country">
       </div>
 <!--      state-->
-      <div>
-        <label for="State"></label>
-        <input type="text" id="State" name="State" placeholder="State" [(ngModel)]="address.state" required>
+      <div class="form-group">
+        <label for="State">State</label>
+        <input type="text" id="State" class="form-control item" name="State" placeholder="State"  formControlName="state">
       </div>
 <!--      city-->
-      <div>
-        <label for="City"></label>
-        <input type="text" id="City" name="City" placeholder="City" [(ngModel)]="address.city" required>
+      <div class="form-group">
+        <label for="City">City</label>
+        <input type="text" id="City" class="form-control item" name="City" placeholder="City" formControlName="city">
       </div>
 <!--      street-->
-      <div>
-        <label for="Street"></label>
-        <input type="text" id="Street" name="Street" placeholder="Street" [(ngModel)]="address.street" required>
+      <div class="form-group">
+        <label for="Street">Street</label>
+        <input type="text" id="Street" class="form-control item" name="Street" placeholder="Street" formControlName="street">
       </div>
 <!--      zip-->
-      <div>
-        <label for="Zip"></label>
-        <input type="text" id="Zip" name="Zip" placeholder="Zip" [(ngModel)]="address.zip" required>
+      <div class="form-group">
+        <label for="Zip">Zip</label>
+        <input type="text" id="Zip" class="form-control item" name="Zip" placeholder="Zip" formControlName="zip">
       </div>
-        <input type="submit" class=" submit" value="Save Address">
-
+      <div class="form-group">
+        <input type="submit" class="btn btn-block create-account" value="Save Address">
+      </div>
     </form>
 
-
-  </div>
 </div>
